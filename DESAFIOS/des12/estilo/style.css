@@ -14,16 +14,25 @@ header {
     background-color: black;
     color: white;
     text-align: center;
+
+    & h1 {
+        padding-top: 50px;
+        font-variant: small-caps;
+    }
+
+    & p {
+        padding-bottom: 50px;
+    }
 }
 
-header > h1 {
+/*header > h1 {
     padding-top: 50px;
     font-variant: small-caps;
 }
 
 header > p {
     padding-bottom: 50px;
-}
+}*/
 
 header a, footer a {
     color: white;
