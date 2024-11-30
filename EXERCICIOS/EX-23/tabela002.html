@@ -12,6 +12,7 @@
         table {
             width: 500px;
             border-collapse: collapse;
+            position: relative;
         }
 
         td, th {
@@ -26,6 +27,19 @@
         thead {
             background-color: gray;
             color: white;
+                & tr {
+                    & th {
+                        position: sticky;
+                        top: -1px;
+                        background-color: gray ;
+                    }
+                }
+        }
+
+        tbody {
+            & tr:nth-last-child(2n) {
+                background-color: lightgray;
+            }
         }
 
         tfoot {
@@ -33,22 +47,33 @@
             color: white;
         }
 
+        caption {
+            font-size: 1.5em;
+            font-weight: bold;
+            padding: 10px;
+            background-color: rgb(70, 70, 70);
+            color: white;
+            text-shadow: 1px 1px rgba(0, 0, 0, 0.6);
+        }
+
     </style>
 </head>
 <body>
     <h1>Uso de tabelas grandes</h1>
+    
     <table>
+        <caption>População das Unidades Federativas</caption>
         <thead>
             <tr>
-                <th>Estado</th>
-                <th>População</th>
+                <th scope="col">Estado</th>
+                <th scope="col" style="width: 50px;">População</th>
             </tr>
         </thead>
         <tbody>
             <tr>
                 <td>São Paulo</td>
                 <td class="num">45 919 049</td>
-            </tr>
+            </tr> 
             <tr>
                 <td>Minas Gerais</td>
                 <td class="num">11 168 791</td>
@@ -156,7 +181,7 @@
         </tbody>
         <tfoot>
             <tr>
-                <th>Total de Habitantes</th>
+                <th scope="row">Total de Habitantes</th>
                 <td class="num"><strong>212 583 720</strong></td>
             </tr>
         </tfoot>
